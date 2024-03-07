@@ -1,0 +1,86 @@
+:root {
+    --Light: #47a820;
+}
+
+.login_title {
+    width: 100%;
+    margin: 60px auto 30px auto;
+    color: black;
+    font-size: 2rem;
+    letter-spacing: 0.6px;
+    text-align: center;
+}
+
+.login_form {
+    width: 600px;
+    margin: 0 auto;
+    padding: 18px 18px 12px 20px;
+    border: 3px solid var(--Light);
+}
+
+.login_form__inner {
+    background-color: var(--Light);
+    padding: 18px 20px 1px 20px;
+}
+
+.login_form__title {
+    width: 100%;
+    margin: 0 auto 20px auto;
+    font-size: 2rem;
+}
+
+.login_field {
+    position: relative;
+}
+
+.login_input {
+    display: block;
+    width: 520px;
+    height: 66px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    padding: 20px;
+    font-size: 2rem;
+    color: var(--Light);
+}
+
+.login_input::placeholder {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 2rem;
+    color: gray;
+    letter-spacing: 0.6px;
+}
+
+.login_btn {
+    display: block;
+    width: 240px;
+    margin: 20px auto;
+    height: 45px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+    transition: all linear .5s;
+}
+
+.login_btn:hover {
+    border: none;
+    background-color: var(--Light);
+}
+
+@media screen and (max-width: 768x){
+    .login_form {
+        width: 320px;
+    }
+    .login_input {
+        width: 250px;
+    }
+}
