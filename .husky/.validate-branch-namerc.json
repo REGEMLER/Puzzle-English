@@ -1,0 +1,4 @@
+{
+    "pattern":  "^(master|main|){1}$|^(feat|fix|refactor|init)/RSS-PZ-[0-9][0-9]_[a-zA-Z0-9_]+$",
+    "errorMsg": "Invalid branch name"
+  }
