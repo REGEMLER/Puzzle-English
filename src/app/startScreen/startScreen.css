@@ -13,7 +13,7 @@
     background: linear-gradient(0deg, rgba(115,168,68,0.8940826330532213) 19%, rgba(187,208,40,0.70640756302521) 100%);
 }
 .start_title {
-    width: 100%;
+    max-width: 90%;
     margin: 60px auto 30px auto;
     color: black;
     font-size: 2rem;
@@ -22,10 +22,21 @@
 }
 
 .start_subtitle {
-    width: 100%;
+    max-width: 90%;
     margin: 30px auto;
     color: black;
     font-size: 1.5rem;
+    letter-spacing: 0.6px;
+    text-align: center;
+}
+
+.start_greeting {
+    max-width: 90%;
+    margin: 30px auto;
+    color: var(--start);
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: italic;
     letter-spacing: 0.6px;
     text-align: center;
 }

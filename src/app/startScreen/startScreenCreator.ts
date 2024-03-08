@@ -1,4 +1,5 @@
 import './startScreen.css';
+import { greetingCreator } from './createGreeting';
 
 export function startScreenCreator() {
     let root: HTMLElement | null = document.getElementById('root');
@@ -12,7 +13,9 @@ export function startScreenCreator() {
     <main class="start">
         <h1 class="start_title">ENGLISH PUZZLE</h1>
         <h2 class="start_subtitle">ENGLISH PUZZLE is an effective service for learning language. Click on words and collect phrases!</h2>
+        <h2 class="start_greeting"></h2>
         <button id="start" class="start_btn">START</button>
     </main>`;
     root.innerHTML = inner;
+    greetingCreator();
 }
