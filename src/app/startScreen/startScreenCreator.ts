@@ -1,24 +1,21 @@
 import './startScreen.css';
 import { greetingCreator } from './createGreeting';
+import { logoutCreator } from '../logout/logoutCreator';
 import { onStart } from './onStart';
+import { rootCreator } from '../root/rootCreator';
 
 export function startScreenCreator() {
-    let root: HTMLElement | null = document.getElementById('root');
-    if (!root) {
-        root = document.createElement('DIV');
-    }
-    root.id = 'root';
-    root.innerHTML = '';
-    document.body.append(root);
+    const root: HTMLElement = rootCreator();
     const inner: string = `
     <main class="start">
-        <h1 class="start_title">ENGLISH PUZZLE</h1>
+        <h1 class="start_title title">ENGLISH PUZZLE</h1>
         <h2 class="start_subtitle">ENGLISH PUZZLE is an effective service for learning language. Click on words and collect phrases!</h2>
         <h2 class="start_greeting"></h2>
-        <button id="start" class="start_btn">START</button>
+        <button id="start" class="btn start_btn">START</button>
     </main>`;
     root.innerHTML = inner;
     greetingCreator();
+    logoutCreator();
     const startButton: HTMLElement | null = document.getElementById('start');
     if (startButton) {
         startButton.addEventListener('click', onStart);

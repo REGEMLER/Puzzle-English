@@ -1,17 +1,12 @@
 import './login.css';
 import { onLogin } from './onLogin';
+import { rootCreator } from '../root/rootCreator';
 
 export function loginCreator() {
-    let root: HTMLElement | null = document.getElementById('root');
-    if (!root) {
-        root = document.createElement('DIV');
-    }
-    root.id = 'root';
-    root.innerHTML = '';
-    document.body.append(root);
+    const root: HTMLElement = rootCreator();
     const inner: string = `
     <main class="login">
-        <h1 class="login_title">ENGLISH PUZZLE</h1>
+        <h1 class="login_title title">ENGLISH PUZZLE</h1>
         <form action="#" class="login_form">
             <div class="login_form__inner">
                 <h2 class="login_form__title">LOGIN</h2>
@@ -24,7 +19,7 @@ export function loginCreator() {
                     <span class="login_message login_message2"></span>
                 </div>
             </div>
-            <button id="login" class="login_btn">LOGIN</button>
+            <button id="login" class="login_btn btn">LOGIN</button>
         </form>
     </main>`;
     root.innerHTML = inner;

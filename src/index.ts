@@ -1,3 +1,3 @@
 import './index.css';
-import { loginCreator } from './app/login/loginCreator';
-loginCreator();
+import { launcher } from './app/app';
+launcher();

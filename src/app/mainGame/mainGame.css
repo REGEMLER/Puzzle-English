@@ -1,7 +1,3 @@
-:root {
-    --main: #c52d1d;
-}
-
 .game {
     width: 100%;
     min-height: 100vh;
@@ -13,12 +9,7 @@
     background: linear-gradient(0deg, rgba(115,168,68,0.8940826330532213) 19%, rgba(187,208,40,0.70640756302521) 100%);
 }
 .game_title {
-    max-width: 90%;
-    margin: 60px auto 30px auto;
-    color: var(--main);
-    font-size: 2rem;
-    letter-spacing: 0.6px;
-    text-align: center;
+    color: var(--darkRed);
 }
 .result_field {
     width: 80%;
