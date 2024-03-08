@@ -1,0 +1,34 @@
+:root {
+    --main: #c52d1d;
+}
+
+.game {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(115,168,68,0.8940826330532213) 19%, rgba(187,208,40,0.70640756302521) 100%);
+}
+.game_title {
+    max-width: 90%;
+    margin: 60px auto 30px auto;
+    color: var(--main);
+    font-size: 2rem;
+    letter-spacing: 0.6px;
+    text-align: center;
+}
+.result_field {
+    width: 80%;
+    margin: 20px auto;
+    height: 50px;
+    border: 2px solid black
+}
+.word_field {
+    width: 80%;
+    margin: 20px auto;
+    height: 30px;
+    border: 2px solid black
+}

@@ -1,5 +1,6 @@
 import './startScreen.css';
 import { greetingCreator } from './createGreeting';
+import { onStart } from './onStart';
 
 export function startScreenCreator() {
     let root: HTMLElement | null = document.getElementById('root');
@@ -18,4 +19,8 @@ export function startScreenCreator() {
     </main>`;
     root.innerHTML = inner;
     greetingCreator();
+    const startButton: HTMLElement | null = document.getElementById('start');
+    if (startButton) {
+        startButton.addEventListener('click', onStart);
+    }
 }
