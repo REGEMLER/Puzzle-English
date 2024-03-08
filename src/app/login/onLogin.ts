@@ -1,4 +1,5 @@
 import { validateLetters, validateCapitalLetters, validateLength } from './validators';
+import { onSuccess } from './onSuccess';
 
 export function onLogin(e: SubmitEvent) {
     e.preventDefault();
@@ -31,7 +32,7 @@ export function onLogin(e: SubmitEvent) {
                 hint2.textContent = 'Minimum length of the surname should be 4 characters';
             }
             if (hint1 && hint2 && hint1.textContent === '' && hint2.textContent === '') {
-                console.log('SUCCES!');
+                onSuccess(name.value, surname.value);
             }
         }
     }
