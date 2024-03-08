@@ -1,5 +1,6 @@
 import './login.css';
 import { onLogin } from './onLogin';
+
 export function loginCreator() {
     const root: HTMLElement = document.createElement('DIV');
     document.body.append(root);
@@ -11,11 +12,11 @@ export function loginCreator() {
                 <h2 class="login_form__title">LOGIN</h2>
                 <div class="login_field">
                     <input id="name" class="login_input" type="text" placeholder="Your name" required>
-                    <span class="login_message"></span>
+                    <span class="login_message login_message1"></span>
                 </div>
                 <div class="login_field">
                     <input id="surname" class="login_input" type="text" placeholder="Your surname" required>
-                    <span class="login_message"></span>
+                    <span class="login_message login_message2"></span>
                 </div>
             </div>
             <button id="login" class="login_btn">LOGIN</button>

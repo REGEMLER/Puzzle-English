@@ -33,13 +33,21 @@
     position: relative;
 }
 
+.login_message {
+    position: absolute;
+    bottom: -40%;
+    left: 2%;
+    font-size: 1rem;
+    color: red;
+}
+
 .login_input {
     display: block;
     width: 520px;
     height: 66px;
     background-color: white;
     border-radius: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     padding: 20px;
     font-size: 2rem;
     color: var(--Light);
