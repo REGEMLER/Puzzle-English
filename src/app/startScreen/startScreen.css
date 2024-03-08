@@ -1,0 +1,54 @@
+:root {
+    --start: #c52d1d;
+}
+
+.start {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(115,168,68,0.8940826330532213) 19%, rgba(187,208,40,0.70640756302521) 100%);
+}
+.start_title {
+    width: 100%;
+    margin: 60px auto 30px auto;
+    color: black;
+    font-size: 2rem;
+    letter-spacing: 0.6px;
+    text-align: center;
+}
+
+.start_subtitle {
+    width: 100%;
+    margin: 30px auto;
+    color: black;
+    font-size: 1.5rem;
+    letter-spacing: 0.6px;
+    text-align: center;
+}
+
+.start_btn {
+    display: block;
+    width: 240px;
+    margin: 80px auto;
+    height: 45px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+    transition: all linear .5s;
+}
+
+.start_btn:hover {
+    border: none;
+    background-color: var(--start);
+}

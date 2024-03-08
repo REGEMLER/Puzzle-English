@@ -2,7 +2,12 @@ import './login.css';
 import { onLogin } from './onLogin';
 
 export function loginCreator() {
-    const root: HTMLElement = document.createElement('DIV');
+    let root: HTMLElement | null = document.getElementById('root');
+    if (!root) {
+        root = document.createElement('DIV');
+    }
+    root.id = 'root';
+    root.innerHTML = '';
     document.body.append(root);
     const inner: string = `
     <main class="login">
@@ -24,5 +29,7 @@ export function loginCreator() {
     </main>`;
     root.innerHTML = inner;
     const form: HTMLFormElement | null = root.querySelector('.login_form');
-    form?.addEventListener('submit', onLogin);
+    if (form) {
+        form.addEventListener('submit', onLogin);
+    }
 }
