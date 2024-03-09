@@ -20,15 +20,17 @@
     border: 2px solid black;
     display: flex;
     flex-direction: column;
-    background-color: gray;
+    align-items: stretch;
+    background-color: rgb(207, 207, 162);
 }
 
 .sentence_block {
-    width: 100%;
+    min-width: 100%;
     margin: 0 auto;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
     min-height: 3rem;
 }
 
@@ -36,8 +38,7 @@
     min-width: 80%;
     margin: 20px auto;
     padding: 0.5rem;
-    /* border: 2px solid black; */
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: transparent;
@@ -49,7 +50,7 @@
     font-size: 1.2rem;
     font-weight: 700;
     border: 1px solid black;
-    background-color: gray;
+    background-color: var(--lightGreen);
     cursor: pointer;
     transition: all ease-in-out .7s;
 }
@@ -96,4 +97,15 @@
 
 .word_up9 {
     transform: translateY(-100px);
+}
+
+@media screen and (max-width: 868px){
+    .sentence_block {
+        min-height: 2.5rem;
+    }
+    .word {
+        padding: 0.5rem;
+        font-size: 1rem;
+        font-weight: 400;
+    }
 }
