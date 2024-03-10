@@ -99,6 +99,46 @@
     transform: translateY(-100px);
 }
 
+.word_down0 {
+    transform: translateY(510px);
+}
+
+.word_down1 {
+    transform: translateY(480px);
+}
+
+.word_down2 {
+    transform: translateY(430px);
+}
+
+.word_down3 {
+    transform: translateY(380px);
+}
+
+.word_down5 {
+    transform: translateY(330px);
+}
+
+.word_down5 {
+    transform: translateY(280px);
+}
+
+.word_down6 {
+    transform: translateY(230px);
+}
+
+.word_down7 {
+    transform: translateY(180px);
+}
+
+.word_down8 {
+    transform: translateY(140px);
+}
+
+.word_down9 {
+    transform: translateY(100px);
+}
+
 @media screen and (max-width: 868px){
     .sentence_block {
         min-height: 2.5rem;
