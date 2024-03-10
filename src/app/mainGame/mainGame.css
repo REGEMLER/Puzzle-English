@@ -55,9 +55,28 @@
     transition: all ease-in-out .7s;
 }
 
-/* .word:hover {
-    transform: scale(1.1);
-} */
+.game-btns {
+    width: 80%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#continue {
+    background-color: var(--lightGreen);
+    border: 1px solid black;
+    color: white;
+    border-radius: 5px;
+}
+
+#continue:disabled {
+    background-color: gray;
+    color: black;
+    border-radius: 0;
+    cursor: auto;
+}
+
 
 .word_up0 {
     transform: translateY(-510px);

@@ -20,7 +20,10 @@ export function mainGameCreator() {
             <div class="sentence_block"></div>
         </div>
         <div class="source_block"></div>
+        <div class="game-btns">
+            <button class="btn" id="continue" disabled>Continue</button>
+        </div>
     </main>`;
     root.innerHTML = inner;
-    roundCreator(0);
+    roundCreator(0, 0);
 }
