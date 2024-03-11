@@ -22,6 +22,7 @@ export function mainGameCreator() {
         <div class="source_block"></div>
         <div class="game-btns">
             <button class="btn" id="continue" disabled>Continue</button>
+            <button class="btn" id="check" disabled>Check</button>
         </div>
     </main>`;
     root.innerHTML = inner;

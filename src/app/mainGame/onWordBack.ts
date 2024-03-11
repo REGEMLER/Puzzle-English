@@ -1,4 +1,4 @@
-import { createWord } from './roundCreator';
+import { createWord, disableButtons } from './roundCreator';
 import { checkSectence } from './checkSectence';
 
 export function onWordBack(element: HTMLElement, sectenceNumber: number, roundNumber: number) {
@@ -13,10 +13,7 @@ export function onWordBack(element: HTMLElement, sectenceNumber: number, roundNu
                 sourceBlock.append(word);
                 target.remove();
                 if (sourceBlock.children.length > 0 || !checkSectence(sectenceNumber, roundNumber)) {
-                    const continueButton = document.getElementById('continue');
-                    if (continueButton instanceof HTMLButtonElement) {
-                        continueButton.disabled = true;
-                    }
+                    disableButtons();
                 }
             });
         }

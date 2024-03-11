@@ -1,6 +1,7 @@
 import { createWord } from './roundCreator';
 import { checkSectence } from './checkSectence';
 import { onContinue } from './onContinue';
+import { onCheck } from './onCheck';
 
 export function onWord(element: HTMLElement, sectenceNumber: number, roundNumber: number) {
     element.addEventListener('click', (event: MouseEvent) => {
@@ -13,13 +14,22 @@ export function onWord(element: HTMLElement, sectenceNumber: number, roundNumber
                 const word = createWord(target.textContent, sectenceNumber, roundNumber, 'back');
                 sentenceElements.append(word);
                 target.remove();
-                if (sourceBlock.children.length === 0 && checkSectence(sectenceNumber, roundNumber)) {
-                    const continueButton = document.getElementById('continue');
-                    if (continueButton instanceof HTMLButtonElement) {
-                        continueButton.disabled = false;
-                        continueButton.addEventListener('click', onContinue(sectenceNumber, roundNumber), {
+                if (sourceBlock.children.length === 0) {
+                    const checkButton = document.getElementById('check');
+                    if (checkButton instanceof HTMLButtonElement) {
+                        checkButton.disabled = false;
+                        checkButton.addEventListener('click', onCheck(sectenceNumber, roundNumber), {
                             once: true,
                         });
+                    }
+                    if (checkSectence(sectenceNumber, roundNumber)) {
+                        const continueButton = document.getElementById('continue');
+                        if (continueButton instanceof HTMLButtonElement) {
+                            continueButton.disabled = false;
+                            continueButton.addEventListener('click', onContinue(sectenceNumber, roundNumber), {
+                                once: true,
+                            });
+                        }
                     }
                 }
             });

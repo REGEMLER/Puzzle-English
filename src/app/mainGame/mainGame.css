@@ -55,6 +55,19 @@
     transition: all ease-in-out .7s;
 }
 
+.word-wrong {
+    color: var(--darkRed);
+    border: 1px solid var(--darkRed);
+    text-decoration: line-through;
+}
+
+.word-right {
+    background-color: white;
+    color: var(--lightGreen);
+    border: 1px solid var(--lightGreen);
+    text-decoration: underline;
+}
+
 .game-btns {
     width: 80%;
     margin: 10px auto;
@@ -63,20 +76,21 @@
     align-items: center;
 }
 
-#continue {
+#continue,
+#check {
     background-color: var(--lightGreen);
     border: 1px solid black;
     color: white;
     border-radius: 5px;
 }
 
-#continue:disabled {
+#continue:disabled,
+#check:disabled {
     background-color: gray;
     color: black;
     border-radius: 0;
     cursor: auto;
 }
-
 
 .word_up0 {
     transform: translateY(-510px);

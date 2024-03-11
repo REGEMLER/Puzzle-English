@@ -15,12 +15,18 @@ export function createWord(word: string | null, sectenceNumber: number, roundNum
     return wordElement;
 }
 
+export function disableButtons() {
+    const continueButton = document.getElementById('continue');
+    const checkButton = document.getElementById('check');
+    if (continueButton instanceof HTMLButtonElement && checkButton instanceof HTMLButtonElement) {
+        continueButton.disabled = true;
+        checkButton.disabled = true;
+    }
+}
+
 export function roundCreator(sectenceNumber: number, roundNumber: number) {
     const rounds = level1.rounds;
-    const continueButton = document.getElementById('continue');
-    if (continueButton instanceof HTMLButtonElement) {
-        continueButton.disabled = true;
-    }
+    disableButtons();
     const sectence = rounds[roundNumber].words[sectenceNumber].textExample;
     console.log(sectence);
     const roundsElements = document.querySelector('.source_block') as HTMLElement;
