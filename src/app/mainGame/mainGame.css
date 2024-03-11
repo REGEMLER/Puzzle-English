@@ -77,7 +77,8 @@
 }
 
 #continue,
-#check {
+#check,
+#giveUp {
     background-color: var(--lightGreen);
     border: 1px solid black;
     color: white;

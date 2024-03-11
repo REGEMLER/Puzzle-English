@@ -1,6 +1,7 @@
 import { level1 } from '../../public/data/wordCollectionLevel1';
 import { onWord } from './onWord';
 import { onWordBack } from './onWordBack';
+import { onGiveUp } from './onGiveUp';
 
 export function createWord(word: string | null, sectenceNumber: number, roundNumber: number, listener?: string) {
     const wordElement = document.createElement('div');
@@ -36,5 +37,11 @@ export function roundCreator(sectenceNumber: number, roundNumber: number) {
     for (let i = 0; i < wordsSorted.length; i += 1) {
         const wordElement = createWord(wordsSorted[i], sectenceNumber, roundNumber, 'up');
         roundsElements.append(wordElement);
+    }
+    const giveUpButton = document.getElementById('giveUp');
+    if (giveUpButton instanceof HTMLButtonElement) {
+        giveUpButton.addEventListener('click', onGiveUp(sectenceNumber, roundNumber), {
+            once: true,
+        });
     }
 }
