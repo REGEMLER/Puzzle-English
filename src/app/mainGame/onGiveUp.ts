@@ -16,10 +16,11 @@ export function onGiveUp(sectence: number, round: number) {
             const wordElement = createWord(trueWordsArray[i], sectence, round);
             sentenceElement.append(wordElement);
         }
-        const continueButton = document.getElementById('continue');
-        if (continueButton instanceof HTMLButtonElement) {
-            continueButton.disabled = false;
-            continueButton.addEventListener('click', onContinue(sectence, round), {
+        const checkButton = document.getElementById('check');
+        if (checkButton instanceof HTMLButtonElement) {
+            checkButton.disabled = false;
+            checkButton.textContent = 'Continue';
+            checkButton.addEventListener('click', onContinue(sectence, round), {
                 once: true,
             });
         }

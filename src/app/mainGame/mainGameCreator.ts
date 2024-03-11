@@ -21,7 +21,6 @@ export function mainGameCreator() {
         </div>
         <div class="source_block"></div>
         <div class="game-btns">
-            <button class="btn" id="continue" disabled>Continue</button>
             <button class="btn" id="check" disabled>Check</button>
             <button class="btn" id="giveUp">Give up</button>
         </div>

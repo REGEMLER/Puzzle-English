@@ -17,11 +17,10 @@ export function createWord(word: string | null, sectenceNumber: number, roundNum
 }
 
 export function disableButtons() {
-    const continueButton = document.getElementById('continue');
     const checkButton = document.getElementById('check');
-    if (continueButton instanceof HTMLButtonElement && checkButton instanceof HTMLButtonElement) {
-        continueButton.disabled = true;
+    if (checkButton instanceof HTMLButtonElement) {
         checkButton.disabled = true;
+        checkButton.textContent = 'Check';
     }
 }
 

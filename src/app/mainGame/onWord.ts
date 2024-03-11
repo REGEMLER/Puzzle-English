@@ -18,15 +18,13 @@ export function onWord(element: HTMLElement, sectenceNumber: number, roundNumber
                     const checkButton = document.getElementById('check');
                     if (checkButton instanceof HTMLButtonElement) {
                         checkButton.disabled = false;
-                        checkButton.addEventListener('click', onCheck(sectenceNumber, roundNumber), {
-                            once: true,
-                        });
-                    }
-                    if (checkSectence(sectenceNumber, roundNumber)) {
-                        const continueButton = document.getElementById('continue');
-                        if (continueButton instanceof HTMLButtonElement) {
-                            continueButton.disabled = false;
-                            continueButton.addEventListener('click', onContinue(sectenceNumber, roundNumber), {
+                        if (!checkSectence(sectenceNumber, roundNumber)) {
+                            checkButton.addEventListener('click', onCheck(sectenceNumber, roundNumber), {
+                                once: true,
+                            });
+                        } else {
+                            checkButton.textContent = 'Continue';
+                            checkButton.addEventListener('click', onContinue(sectenceNumber, roundNumber), {
                                 once: true,
                             });
                         }

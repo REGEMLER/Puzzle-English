@@ -76,7 +76,6 @@
     align-items: center;
 }
 
-#continue,
 #check,
 #giveUp {
     background-color: var(--lightGreen);
@@ -85,7 +84,6 @@
     border-radius: 5px;
 }
 
-#continue:disabled,
 #check:disabled {
     background-color: gray;
     color: black;
