@@ -1,9 +1,11 @@
 import { level1 } from '../../public/data/wordCollectionLevel1';
 import { createWord } from './roundCreator';
 import { onContinue } from './onContinue';
+import { showTranslation } from '../hints/onTranslation';
 
 export function onGiveUp(sectence: number, round: number) {
     return () => {
+        showTranslation();
         const rounds = level1.rounds;
         const sentenceElements = [...document.querySelectorAll('.sentence_block')];
         const roundsElements = document.querySelector('.source_block') as HTMLElement;

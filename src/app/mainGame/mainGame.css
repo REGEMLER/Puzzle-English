@@ -15,6 +15,14 @@
     color: var(--darkRed);
 }
 
+.hints {
+    max-width: 80%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .translation {
     max-width: 80%;
     margin: 10px auto;
@@ -23,6 +31,10 @@
     font-size: 1.2rem;
     font-weight: 700;
     transition: all ease-in-out .7s;
+}
+
+.translation-hidden {
+    opacity: 0;
 }
 
 .result_block {
@@ -88,11 +100,16 @@
 }
 
 #check,
-#giveUp {
+#giveUp,
+#translation {
     background-color: var(--lightGreen);
     border: 1px solid black;
     color: white;
     border-radius: 5px;
+}
+
+.translation_active {
+    background-color: var(--darkRed) !important;
 }
 
 #check:disabled {

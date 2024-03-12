@@ -2,6 +2,7 @@ import { createWord } from './roundCreator';
 import { checkSectence } from './checkSectence';
 import { onContinue } from './onContinue';
 import { onCheck } from './onCheck';
+import { showTranslation } from '../hints/onTranslation';
 
 export function onWord(element: HTMLElement, sectenceNumber: number, roundNumber: number) {
     element.addEventListener('click', (event: MouseEvent) => {
@@ -23,6 +24,7 @@ export function onWord(element: HTMLElement, sectenceNumber: number, roundNumber
                                 once: true,
                             });
                         } else {
+                            showTranslation();
                             checkButton.textContent = 'Continue';
                             checkButton.addEventListener('click', onContinue(sectenceNumber, roundNumber), {
                                 once: true,
