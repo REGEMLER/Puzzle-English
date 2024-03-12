@@ -11,7 +11,18 @@
 }
 
 .game_title {
+    margin-bottom: 10px;
     color: var(--darkRed);
+}
+
+.translation {
+    max-width: 80%;
+    margin: 10px auto;
+    padding: 0.6rem;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all ease-in-out .7s;
 }
 
 .result_block {

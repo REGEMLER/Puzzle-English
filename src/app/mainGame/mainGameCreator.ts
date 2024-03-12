@@ -7,6 +7,7 @@ export function mainGameCreator() {
     const inner: string = `
     <main class="game">
         <h1 class="game_title title">ENGLISH PUZZLE</h1>
+        <div class="translation"></div>
         <div class="result_block">
             <div class="sentence_block"></div>
             <div class="sentence_block"></div>

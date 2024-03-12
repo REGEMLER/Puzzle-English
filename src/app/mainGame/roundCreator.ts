@@ -2,6 +2,7 @@ import { level1 } from '../../public/data/wordCollectionLevel1';
 import { onWord } from './onWord';
 import { onWordBack } from './onWordBack';
 import { onGiveUp } from './onGiveUp';
+import { createTranslation } from '../hints/createTranslation';
 
 export function createWord(word: string | null, sectenceNumber: number, roundNumber: number, listener?: string) {
     const wordElement = document.createElement('div');
@@ -28,6 +29,8 @@ export function roundCreator(sectenceNumber: number, roundNumber: number) {
     const rounds = level1.rounds;
     disableButtons();
     const sectence = rounds[roundNumber].words[sectenceNumber].textExample;
+    const translation = rounds[roundNumber].words[sectenceNumber].textExampleTranslate;
+    createTranslation(translation);
     console.log(sectence);
     const roundsElements = document.querySelector('.source_block') as HTMLElement;
     roundsElements.innerHTML = '';
