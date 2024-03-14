@@ -1,9 +1,10 @@
-import { level1 } from '../../public/data/wordCollectionLevel1';
+import { getAllRounds, getRound } from '../levels/round';
 
-export function onCheck(sectence: number, round: number) {
+export function onCheck(sectence: number) {
     return (event: MouseEvent) => {
         const target = event.target;
-        const rounds = level1.rounds;
+        const rounds = getAllRounds();
+        const round = Number(getRound()) - 1;
         const sentenceElements = [...document.querySelectorAll('.sentence_block')];
         const sentenceElement = sentenceElements[sectence];
         const userWords = [...sentenceElement.querySelectorAll('.word')];

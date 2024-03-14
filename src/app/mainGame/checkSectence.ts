@@ -1,8 +1,9 @@
-import { level1 } from '../../public/data/wordCollectionLevel1';
+import { getAllRounds, getRound } from '../levels/round';
 
-export function checkSectence(sectenceNumber: number, roundNumber: number) {
-    const rounds = level1.rounds;
-    const sectence = rounds[roundNumber].words[sectenceNumber].textExample;
+export function checkSectence(sectenceNumber: number) {
+    const rounds = getAllRounds();
+    const round = Number(getRound()) - 1;
+    const sectence = rounds[round].words[sectenceNumber].textExample;
     const sentenceElement = [...document.querySelectorAll('.sentence_block')][sectenceNumber];
     const wordElements = [...sentenceElement.querySelectorAll('.word')];
     const userSentance: string[] = [];

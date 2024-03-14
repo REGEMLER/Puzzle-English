@@ -1,34 +1,35 @@
-import { level1 } from '../../public/data/wordCollectionLevel1';
+import { getAllRounds, getRound, setRound } from '../levels/round';
+import { cleanResultBlock } from '../levels/level';
 import { roundCreator } from './roundCreator';
 import { createWord } from './roundCreator';
 
-export function onContinue(sectenceNumber: number, roundNumber: number) {
+export function onContinue(sectenceNumber: number) {
     return () => {
-        const rounds = level1.rounds;
+        const rounds = getAllRounds();
+        const round = Number(getRound()) - 1;
         const sentenceElements = [...document.querySelectorAll('.sentence_block')];
         const sentenceElement = sentenceElements[sectenceNumber];
         sentenceElement.innerHTML = '';
-        const sectence = rounds[roundNumber].words[sectenceNumber].textExample;
+        const sectence = rounds[round].words[sectenceNumber].textExample;
         const words = sectence.split(' ');
         for (let i = 0; i < words.length; i += 1) {
-            const wordElement = createWord(words[i], sectenceNumber, roundNumber);
+            const wordElement = createWord(words[i], sectenceNumber);
             sentenceElement.append(wordElement);
         }
 
         let newSectenceNumber = sectenceNumber;
-        let newRoundNumber = roundNumber;
-        if (sectenceNumber >= rounds[roundNumber].words.length - 1) {
-            sentenceElements.forEach((item) => {
-                const newItem = item;
-                newItem.innerHTML = '';
-            });
+
+        if (sectenceNumber >= rounds[round].words.length - 1) {
+            let newRound = round + 1;
+            cleanResultBlock();
             newSectenceNumber = 0;
-            newRoundNumber += 1;
+            newRound += 1;
+            setRound(String(newRound));
             console.log('WIN');
-            roundCreator(newSectenceNumber, newRoundNumber);
+            roundCreator(newSectenceNumber);
             return;
         }
         newSectenceNumber += 1;
-        roundCreator(newSectenceNumber, newRoundNumber);
+        roundCreator(newSectenceNumber);
     };
 }
