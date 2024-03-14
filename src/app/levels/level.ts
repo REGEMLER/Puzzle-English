@@ -63,3 +63,12 @@ export function createLevelListener() {
         levelElement.addEventListener('change', onLevel);
     }
 }
+
+export function markLevel() {
+    const levelSelector = document.getElementById('level');
+    if (levelSelector) {
+        const levelElements = [...levelSelector.querySelectorAll('option')];
+        const currentRound = levelElements.find((_, index) => index === Number(getLevel()));
+        currentRound?.classList.add('option-complete');
+    }
+}

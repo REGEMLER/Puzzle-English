@@ -35,12 +35,16 @@ select {
     font-weight: 700;
 }
 option {
-    background-color: var(--lightGreen);
     border: 1px solid black;
     color: white;
     border-radius: 5px;
     font-size: 1.2rem;
     text-align: center;
+    background-color: var(--darkRed);
+}
+
+.option-complete {
+    background-color: var(--lightGreen);
 }
 
 .translation {

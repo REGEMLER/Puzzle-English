@@ -21,9 +21,6 @@ export function mainGameCreator() {
             </select>
             <select name="round" id="round">
                 <option value="">Round</option>
-                <option value="all">1</option>
-                <option value="all">2</option>
-                <option value="all">3</option>
             </select>
             <button class="btn" id="translation">Show text</button>
         </div>

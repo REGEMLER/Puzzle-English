@@ -35,3 +35,12 @@ export function createRoundListener() {
         roundElement.addEventListener('change', onRound);
     }
 }
+
+export function markRound() {
+    const roundSelector = document.getElementById('round');
+    if (roundSelector) {
+        const roundElements = [...roundSelector.querySelectorAll('option')];
+        const currentRound = roundElements.find((_, index) => index === Number(getRound()));
+        currentRound?.classList.add('option-complete');
+    }
+}
