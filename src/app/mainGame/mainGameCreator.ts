@@ -1,5 +1,6 @@
 import './mainGame.css';
 import { rootCreator } from '../root/rootCreator';
+import { setTranslationHint } from '../hints/setTranslationHint';
 import { createTranslationListener } from '../hints/onTranslation';
 import { createLevelListener, getLevel, setLevel } from '../levels/level';
 import { createRoundListener, getAllRounds, getRound, setRound } from '../levels/round';
@@ -8,6 +9,7 @@ import { roundCreator } from './roundCreator';
 import { createRoundOptions, createLevelOptions } from '../levels/level';
 
 function startGame() {
+    setTranslationHint();
     createLevelListener();
     createRoundListener();
     createTranslationListener();
