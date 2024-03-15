@@ -1,17 +1,11 @@
-import { getAllRounds, getRound } from '../levels/round';
+import { selector } from './selector';
 
 export function onCheck(sectence: number) {
     return (event: MouseEvent) => {
         const target = event.target;
-        const rounds = getAllRounds();
-        const round = Number(getRound()) - 1;
-        const sentenceElements = [...document.querySelectorAll('.sentence_block')];
-        const sentenceElement = sentenceElements[sectence];
-        const userWords = [...sentenceElement.querySelectorAll('.word')];
-
-        const trueSentence = rounds[round].words[sectence].textExample;
+        const { trueSentence, wordElements } = selector(sectence);
         const trueWordsArray = trueSentence.split(' ');
-        userWords.forEach((word, index) => {
+        wordElements.forEach((word, index) => {
             if (word.textContent !== trueWordsArray[index]) {
                 word.classList.add('word-wrong');
             } else {

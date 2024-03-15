@@ -1,4 +1,4 @@
-import { createWord } from './roundCreator';
+import { createWord } from './createWord';
 import { checkSectence } from './checkSectence';
 import { onContinue } from './onContinue';
 import { onCheck } from './onCheck';

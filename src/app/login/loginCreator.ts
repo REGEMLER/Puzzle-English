@@ -1,9 +1,9 @@
 import './login.css';
 import { onLogin } from './onLogin';
-import { rootCreator } from '../root/rootCreator';
+import { rootElementCreator } from '../root/rootElementCreator';
 
 export function loginCreator() {
-    const root: HTMLElement = rootCreator();
+    const root: HTMLElement = rootElementCreator();
     const inner: string = `
     <main class="login">
         <h1 class="login_title title">ENGLISH PUZZLE</h1>

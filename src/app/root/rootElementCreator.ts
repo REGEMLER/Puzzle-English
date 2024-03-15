@@ -1,4 +1,4 @@
-export function rootCreator() {
+export function rootElementCreator() {
     let root: HTMLElement | null = document.getElementById('root');
     if (!root) {
         root = document.createElement('DIV');

@@ -2,10 +2,10 @@ import './startScreen.css';
 import { greetingCreator } from './createGreeting';
 import { logoutCreator } from '../logout/logoutCreator';
 import { onStart } from './onStart';
-import { rootCreator } from '../root/rootCreator';
+import { rootElementCreator } from '../root/rootElementCreator';
 
 export function startScreenCreator() {
-    const root: HTMLElement = rootCreator();
+    const root: HTMLElement = rootElementCreator();
     const inner: string = `
     <main class="start">
         <h1 class="start_title title">ENGLISH PUZZLE</h1>

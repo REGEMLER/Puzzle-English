@@ -1,44 +1,9 @@
 import './mainGame.css';
-import { rootCreator } from '../root/rootCreator';
-import { setTranslationHint } from '../hints/setTranslationHint';
-import { createTranslationListener } from '../hints/onTranslation';
-import { createLevelListener, getLevel, setLevel } from '../levels/level';
-import { createRoundListener, getAllRounds, getRound, setRound } from '../levels/round';
-import { completeLastLevel, completeLevel, completeRound } from './onContinue';
-import { roundCreator } from './roundCreator';
-import { createRoundOptions, createLevelOptions } from '../levels/level';
-
-function startGame() {
-    setTranslationHint();
-    createLevelListener();
-    createRoundListener();
-    createTranslationListener();
-    const isRound = localStorage.getItem('round');
-    if (!isRound) {
-        setLevel('1');
-        setRound('1');
-        createLevelOptions();
-        createRoundOptions();
-        roundCreator(0);
-        return;
-    }
-    const rounds = getAllRounds();
-    const round = Number(getRound()) - 1;
-    const level = Number(getLevel());
-
-    if (level === 6 && round >= rounds.length - 1) {
-        completeLastLevel();
-        return;
-    }
-    if (round >= rounds.length - 1) {
-        completeLevel(level);
-        return;
-    }
-    completeRound(round);
-}
+import { rootElementCreator } from '../root/rootElementCreator';
+import { startGame } from './startGame';
 
 export function mainGameCreator() {
-    const root: HTMLElement = rootCreator();
+    const root: HTMLElement = rootElementCreator();
     const inner: string = `
     <main class="game">
         <h1 class="game_title title">ENGLISH PUZZLE</h1>
