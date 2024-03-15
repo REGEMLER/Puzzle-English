@@ -6,7 +6,7 @@ import { level4 } from '../../public/data/wordCollectionLevel4';
 import { level5 } from '../../public/data/wordCollectionLevel5';
 import { level6 } from '../../public/data/wordCollectionLevel6';
 import { roundCreator } from '../mainGame/roundCreator';
-import { getAllRounds, setRound } from './round';
+import { getAllRounds, setRound, getRoundToLocaleStorage } from './round';
 
 export function getAllLevels(): ILevel[] {
     return [level1, level2, level3, level3, level4, level5, level6];
@@ -30,7 +30,29 @@ export function cleanResultBlock() {
     });
 }
 
+export function createLevelOptions() {
+    const completedLevels = getRoundToLocaleStorage();
+    const levelsData = getAllLevels();
+    const levelElement = document.getElementById('level');
+    if (levelElement) {
+        levelElement.innerHTML = '<option value="">Level</option>';
+        for (let i = 1; i < 7; i += 1) {
+            const option = document.createElement('option');
+            option.value = String(i);
+            option.textContent = String(i);
+            if (levelsData[i].rounds.length === completedLevels[`level${i}`].length) {
+                option.classList.add('option-complete');
+            }
+            levelElement.append(option);
+        }
+    }
+}
+
 export function createRoundOptions() {
+    const level = getLevel();
+    const completedRounds = getRoundToLocaleStorage();
+    const currentLevelStrings = completedRounds[`level${level}`];
+    const currentLevel = currentLevelStrings.map((item: string) => Number(item));
     const roundElement = document.getElementById('round');
     const numberOfRounds = getAllRounds().length;
     if (roundElement) {
@@ -39,6 +61,7 @@ export function createRoundOptions() {
             const option = document.createElement('option');
             option.value = String(i);
             option.textContent = String(i);
+            if (currentLevel.includes(i)) option.classList.add('option-complete');
             roundElement.append(option);
         }
     }

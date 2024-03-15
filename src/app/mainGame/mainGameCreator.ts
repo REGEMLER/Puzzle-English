@@ -1,9 +1,39 @@
 import './mainGame.css';
 import { rootCreator } from '../root/rootCreator';
-import { roundCreator } from './roundCreator';
 import { createTranslationListener } from '../hints/onTranslation';
-import { createLevelListener } from '../levels/level';
-import { createRoundListener } from '../levels/round';
+import { createLevelListener, getLevel, setLevel } from '../levels/level';
+import { createRoundListener, getAllRounds, getRound, setRound } from '../levels/round';
+import { completeLastLevel, completeLevel, completeRound } from './onContinue';
+import { roundCreator } from './roundCreator';
+import { createRoundOptions, createLevelOptions } from '../levels/level';
+
+function startGame() {
+    createLevelListener();
+    createRoundListener();
+    createTranslationListener();
+    const isRound = localStorage.getItem('round');
+    if (!isRound) {
+        setLevel('1');
+        setRound('1');
+        createLevelOptions();
+        createRoundOptions();
+        roundCreator(0);
+        return;
+    }
+    const rounds = getAllRounds();
+    const round = Number(getRound()) - 1;
+    const level = Number(getLevel());
+
+    if (level === 6 && round >= rounds.length - 1) {
+        completeLastLevel();
+        return;
+    }
+    if (round >= rounds.length - 1) {
+        completeLevel(level);
+        return;
+    }
+    completeRound(round);
+}
 
 export function mainGameCreator() {
     const root: HTMLElement = rootCreator();
@@ -11,17 +41,8 @@ export function mainGameCreator() {
     <main class="game">
         <h1 class="game_title title">ENGLISH PUZZLE</h1>
         <div class="hints">
-            <select name="level" id="level">
-                <option value="">Level</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <select name="round" id="round">
-                <option value="">Round</option>
-            </select>
+            <select name="level" id="level"></select>
+            <select name="round" id="round"></select>
             <button class="btn" id="translation">Show text</button>
         </div>
         <div class="translation"></div>
@@ -44,8 +65,5 @@ export function mainGameCreator() {
         </div>
     </main>`;
     root.innerHTML = inner;
-    createTranslationListener();
-    createLevelListener();
-    createRoundListener();
-    roundCreator(0);
+    startGame();
 }
