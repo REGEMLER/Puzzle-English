@@ -124,6 +124,7 @@ option {
 }
 
 #check,
+#result,
 #giveUp,
 #translation {
     background-color: var(--lightGreen);
@@ -136,6 +137,7 @@ option {
     background-color: var(--darkRed) !important;
 }
 
+#result:disabled,
 #check:disabled {
     background-color: gray;
     color: black;

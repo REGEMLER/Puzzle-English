@@ -1,0 +1,37 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    background-color: rgba(218, 228, 228, 0.6);
+}
+
+.modal_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 70%;
+    margin: 0 auto;
+    min-height: 300px;
+    padding: 2rem;
+    background: linear-gradient(0deg, rgba(115,168,68,0.8940826330532213) 19%, rgba(187,208,40,0.70640756302521) 100%);
+    border-radius: 40px;
+    position: relative;
+}
+
+.X {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}

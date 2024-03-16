@@ -2,8 +2,9 @@ import { createWord } from './createWord';
 import { onContinue } from './onContinue';
 import { showTranslation } from '../hints/onTranslation';
 import { selector } from './selector';
+import { enableResultButton } from '../statistics/enableResultButton';
 
-function transformCheckToContinue(sectence: number) {
+function transformButton(sectence: number) {
     const checkButton = document.getElementById('check');
     if (checkButton instanceof HTMLButtonElement) {
         checkButton.disabled = false;
@@ -25,6 +26,7 @@ export function onGiveUp(sectence: number) {
             const wordElement = createWord(trueWordsArray[i], sectence);
             sentenceElement.append(wordElement);
         }
-        transformCheckToContinue(sectence);
+        transformButton(sectence);
+        enableResultButton(sectence);
     };
 }

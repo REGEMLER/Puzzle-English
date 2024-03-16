@@ -3,6 +3,7 @@ import { checkSectence } from './checkSectence';
 import { onContinue } from './onContinue';
 import { onCheck } from './onCheck';
 import { showTranslation } from '../hints/onTranslation';
+import { enableResultButton } from '../statistics/enableResultButton';
 
 export function onWord(element: HTMLElement, sectenceNumber: number) {
     element.addEventListener('click', (event: MouseEvent) => {
@@ -24,6 +25,7 @@ export function onWord(element: HTMLElement, sectenceNumber: number) {
                                 once: true,
                             });
                         } else {
+                            enableResultButton(sectenceNumber);
                             showTranslation();
                             checkButton.textContent = 'Continue';
                             checkButton.addEventListener('click', onContinue(sectenceNumber), {
