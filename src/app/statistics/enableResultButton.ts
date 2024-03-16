@@ -6,7 +6,7 @@ export function enableResultButton(sectence: number) {
     const resultButton = document.getElementById('result');
     if (sectence >= rounds[round].words.length - 1 && resultButton instanceof HTMLButtonElement) {
         resultButton.disabled = false;
-        resultButton.addEventListener('click', createStatisticsPage, {
+        resultButton.addEventListener('click', createStatisticsPage(sectence), {
             once: true,
         });
     }

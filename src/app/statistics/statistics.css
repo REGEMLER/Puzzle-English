@@ -35,3 +35,10 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+#continue {
+    background-color: var(--lightGreen);
+    border: 1px solid black;
+    color: white;
+    border-radius: 5px;
+}
