@@ -1,4 +1,5 @@
 import { onContinue } from '../mainGame/onContinue';
+import { sortStatistics } from './statistics';
 import './statistics.css';
 
 export function closeModal() {
@@ -6,6 +7,10 @@ export function closeModal() {
     if (modal) {
         modal.remove();
         document.body.style.overflowY = '';
+    }
+    const resultButton = document.getElementById('result');
+    if (resultButton instanceof HTMLButtonElement) {
+        resultButton.disabled = true;
     }
 }
 
@@ -17,6 +22,10 @@ export function createStatisticsPage(sectence: number) {
         modal.innerHTML = `
         <div class="modal_inner modal_bg">
         <span class="X">X</span>
+        <h2 class="subtitle subtitle-green">I know</h2>
+        <ul class="list green-list"></ul>
+        <h2 class=" subtitle subtitle-red">I do not know</h2>
+        <ul class= "list red-list"></ul>
         <button class="btn" id="continue">Continue</button>
         </div>
         `;
@@ -29,10 +38,10 @@ export function createStatisticsPage(sectence: number) {
             }
             const continueButton = document.getElementById('continue');
             if (continueButton) {
-                console.log(continueButton);
                 continueButton.addEventListener('click', onContinue(sectence));
                 continueButton.addEventListener('click', closeModal);
             }
         }
+        sortStatistics();
     };
 }

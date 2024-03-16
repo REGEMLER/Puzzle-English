@@ -3,6 +3,7 @@ import { onContinue } from './onContinue';
 import { showTranslation } from '../hints/onTranslation';
 import { selector } from './selector';
 import { enableResultButton } from '../statistics/enableResultButton';
+import { setStatistics } from '../statistics/statistics';
 
 function transformButton(sectence: number) {
     const checkButton = document.getElementById('check');
@@ -28,5 +29,6 @@ export function onGiveUp(sectence: number) {
         }
         transformButton(sectence);
         enableResultButton(sectence);
+        setStatistics(trueSentence);
     };
 }

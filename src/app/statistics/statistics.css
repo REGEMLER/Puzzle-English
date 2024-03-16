@@ -15,14 +15,15 @@
 
 .modal_inner {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: 70%;
+    width: 65%;
     margin: 0 auto;
-    min-height: 300px;
+    min-height: 200px;
     padding: 2rem;
-    background: linear-gradient(0deg, rgba(115,168,68,0.8940826330532213) 19%, rgba(187,208,40,0.70640756302521) 100%);
+    background-color: rgb(207, 207, 162);
     border-radius: 40px;
     position: relative;
 }
@@ -41,4 +42,40 @@
     border: 1px solid black;
     color: white;
     border-radius: 5px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.subtitle-green {
+    color: var(--lightGreen);
+}
+
+.subtitle-red {
+    color: var(--darkRed);
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 1.2rem;
+}
+
+.list li {
+    text-align: center;
+}
+
+.green-list {
+    color: var(--lightGreen);
+}
+
+.red-list {
+    color: var(--darkRed);
 }
