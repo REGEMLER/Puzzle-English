@@ -26,8 +26,10 @@
 }
 
 .login_message {
+    display: inline-block;
+    max-width: 90%;
     position: absolute;
-    bottom: -40%;
+    bottom: -100%;
     left: 2%;
     font-size: 1rem;
     color: red;
@@ -35,11 +37,12 @@
 
 .login_input {
     display: block;
+    max-width: 95%;
     width: 520px;
     height: 66px;
     background-color: white;
     border-radius: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
     padding: 20px;
     font-size: 2rem;
     color: var(--lightGreen);
@@ -53,9 +56,15 @@
     letter-spacing: 0.6px;
 }
 
+.login_input-error {
+    color: var(--darkRed);
+    border: 3px solid var(--darkRed);
+}
+
 .login_btn {
     background-color: white;
     border: 1px solid black;
+    border-radius: 5px;
     color: black;
 }
 
@@ -66,9 +75,9 @@
 
 @media screen and (max-width: 768x){
     .login_form {
-        width: 320px;
+        max-width: 320px;
     }
     .login_input {
-        width: 250px;
+        max-width: 250px;
     }
 }

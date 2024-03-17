@@ -11,11 +11,11 @@ export function loginCreator() {
             <div class="login_form__inner">
                 <h2 class="login_form__title">LOGIN</h2>
                 <div class="login_field">
-                    <input id="name" class="login_input" type="text" placeholder="Your name" required>
+                    <input autocomplete="off" id="name" class="login_input" type="text" placeholder="Your name" required>
                     <span class="login_message login_message1"></span>
                 </div>
                 <div class="login_field">
-                    <input id="surname" class="login_input" type="text" placeholder="Your surname" required>
+                    <input autocomplete="off" id="surname" class="login_input" type="text" placeholder="Your surname" required>
                     <span class="login_message login_message2"></span>
                 </div>
             </div>

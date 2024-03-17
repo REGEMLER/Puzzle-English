@@ -47,3 +47,7 @@ body {
     cursor: pointer;
     transition: all linear .5s;
 }
+
+.btn:active {
+    transform: scale(0.95);
+}
