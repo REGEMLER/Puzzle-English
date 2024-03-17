@@ -1,4 +1,5 @@
 import './mainGame.css';
+import './transition.css';
 import { rootElementCreator } from '../root/rootElementCreator';
 import { startGame } from './startGame';
 

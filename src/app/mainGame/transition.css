@@ -1,0 +1,161 @@
+.word_up0 {
+    transform: translateY(-510px);
+}
+
+.word_up1 {
+    transform: translateY(-480px);
+}
+
+.word_up2 {
+    transform: translateY(-430px);
+}
+
+.word_up3 {
+    transform: translateY(-380px);
+}
+
+.word_up4 {
+    transform: translateY(-330px);
+}
+
+.word_up5 {
+    transform: translateY(-280px);
+}
+
+.word_up6 {
+    transform: translateY(-230px);
+}
+
+.word_up7 {
+    transform: translateY(-180px);
+}
+
+.word_up8 {
+    transform: translateY(-140px);
+}
+
+.word_up9 {
+    transform: translateY(-100px);
+}
+
+.word_down0 {
+    transform: translateY(510px);
+}
+
+.word_down1 {
+    transform: translateY(480px);
+}
+
+.word_down2 {
+    transform: translateY(430px);
+}
+
+.word_down3 {
+    transform: translateY(380px);
+}
+
+.word_down5 {
+    transform: translateY(330px);
+}
+
+.word_down5 {
+    transform: translateY(280px);
+}
+
+.word_down6 {
+    transform: translateY(230px);
+}
+
+.word_down7 {
+    transform: translateY(180px);
+}
+
+.word_down8 {
+    transform: translateY(140px);
+}
+
+.word_down9 {
+    transform: translateY(100px);
+}
+
+@media screen and (max-width: 868px){
+    .word_up0 {
+        transform: translateY(-450px);
+    }
+    
+    .word_up1 {
+        transform: translateY(-420px);
+    }
+    
+    .word_up2 {
+        transform: translateY(-370px);
+    }
+    
+    .word_up3 {
+        transform: translateY(-330px);
+    }
+    
+    .word_up4 {
+        transform: translateY(-290px);
+    }
+    
+    .word_up5 {
+        transform: translateY(-250px);
+    }
+    
+    .word_up6 {
+        transform: translateY(-210px);
+    }
+    
+    .word_up7 {
+        transform: translateY(-170px);
+    }
+    
+    .word_up8 {
+        transform: translateY(-130px);
+    }
+    
+    .word_up9 {
+        transform: translateY(-90px);
+    }
+    
+    .word_down0 {
+        transform: translateY(450px);
+    }
+    
+    .word_down1 {
+        transform: translateY(420px);
+    }
+    
+    .word_down2 {
+        transform: translateY(370px);
+    }
+    
+    .word_down3 {
+        transform: translateY(330px);
+    }
+    
+    .word_down5 {
+        transform: translateY(290px);
+    }
+    
+    .word_down5 {
+        transform: translateY(250px);
+    }
+    
+    .word_down6 {
+        transform: translateY(210px);
+    }
+    
+    .word_down7 {
+        transform: translateY(170px);
+    }
+    
+    .word_down8 {
+        transform: translateY(130px);
+    }
+    
+    .word_down9 {
+        transform: translateY(90px);
+    }
+}

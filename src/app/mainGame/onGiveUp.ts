@@ -18,17 +18,31 @@ function transformButton(sectence: number) {
 
 export function onGiveUp(sectence: number) {
     return () => {
+        const GiveUpButton = document.getElementById('giveUp');
+        if (GiveUpButton instanceof HTMLButtonElement) {
+            GiveUpButton.disabled = true;
+        }
         const { sentenceElement, sourceElements, trueSentence } = selector(sectence);
         showTranslation();
-        if (sourceElements) sourceElements.innerHTML = '';
         sentenceElement.innerHTML = '';
-        const trueWordsArray = trueSentence.split(' ');
-        for (let i = 0; i < trueWordsArray.length; i += 1) {
-            const wordElement = createWord(trueWordsArray[i], sectence);
-            sentenceElement.append(wordElement);
+        if (sourceElements) {
+            const sourceWords = [...sourceElements.querySelectorAll('.word')];
+            sourceWords.forEach((wordElement) => {
+                wordElement.classList.add(`word_up${sectence}`);
+                wordElement.addEventListener('transitionend', () => {
+                    wordElement.remove();
+                });
+            });
         }
-        transformButton(sectence);
-        enableResultButton(sectence);
-        setStatistics(trueSentence);
+        setTimeout(() => {
+            const trueWordsArray = trueSentence.split(' ');
+            for (let i = 0; i < trueWordsArray.length; i += 1) {
+                const wordElement = createWord(trueWordsArray[i], sectence);
+                sentenceElement.append(wordElement);
+            }
+            transformButton(sectence);
+            enableResultButton(sectence);
+            setStatistics(trueSentence);
+        }, 800);
     };
 }
