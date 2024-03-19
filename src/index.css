@@ -20,10 +20,12 @@ body {
     margin: 0 auto;
     background-color: rgb(222, 222, 142);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
 }
 
 #root {
     position: relative;
+    overflow-x: hidden;
 }
 
 .title {
