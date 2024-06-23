@@ -2,7 +2,7 @@ import { setTranslationHint } from '../hints/setTranslationHint';
 import { createTranslationListener } from '../hints/onTranslation';
 import { createLevelListener, getLevel, setLevel } from '../levels/level';
 import { createRoundListener, getAllRounds, getRound, setRound, createRoundOptions } from '../levels/round';
-import { completeLastLevel, completeLevel, completeRound } from './complete';
+import { completeLastLevel, completeLevel, continueRound } from './complete';
 import { sectenceCreator } from './sectenceCreator';
 import { createLevelOptions } from '../levels/level';
 import { createAudioListener } from '../hints/onAudio';
@@ -33,5 +33,5 @@ export function startGame() {
         completeLevel(level);
         return;
     }
-    completeRound(round);
+    continueRound(round);
 }

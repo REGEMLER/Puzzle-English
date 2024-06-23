@@ -36,3 +36,11 @@ export function completeRound(round: number) {
     setRound(String(newRound));
     sectenceCreator(0);
 }
+
+export function continueRound(round: number) {
+    const newRound = round + 1;
+    createLevelOptions();
+    createRoundOptions();
+    setRound(String(newRound));
+    sectenceCreator(0);
+}
