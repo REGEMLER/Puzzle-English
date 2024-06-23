@@ -8,6 +8,7 @@ export function selector(sectence: number) {
     const sourceElements = document.querySelector('.source_block');
     const sentenceElement = sentenceElements[sectence];
     const wordElements = [...sentenceElement.querySelectorAll('.word')];
+    const audioSRC = rounds[round].words[sectence].audioExample;
     return {
         rounds,
         round,
@@ -17,5 +18,6 @@ export function selector(sectence: number) {
         wordElements,
         sourceElements,
         translation,
+        audioSRC,
     };
 }

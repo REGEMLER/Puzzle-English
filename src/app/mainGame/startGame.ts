@@ -5,12 +5,14 @@ import { createRoundListener, getAllRounds, getRound, setRound, createRoundOptio
 import { completeLastLevel, completeLevel, completeRound } from './complete';
 import { sectenceCreator } from './sectenceCreator';
 import { createLevelOptions } from '../levels/level';
+import { createAudioListener } from '../hints/onAudio';
 
 export function startGame() {
     setTranslationHint();
     createLevelListener();
     createRoundListener();
     createTranslationListener();
+    createAudioListener();
     const isRound = localStorage.getItem('round');
     if (!isRound) {
         setLevel('1');

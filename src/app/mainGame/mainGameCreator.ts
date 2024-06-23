@@ -12,8 +12,10 @@ export function mainGameCreator() {
             <select name="level" id="level"></select>
             <select name="round" id="round"></select>
             <button class="btn" id="translation">Show text</button>
+            <button class="btn" id="audio">Listen</button>
         </div>
         <div class="translation"></div>
+        <audio class="audio" src=""></audio>
         <div class="result_block">
             <div class="sentence_block"></div>
             <div class="sentence_block"></div>

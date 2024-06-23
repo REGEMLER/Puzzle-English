@@ -127,6 +127,7 @@ option {
 
 #check,
 #result,
+#audio,
 #giveUp,
 #translation {
     background-color: var(--lightGreen);
@@ -146,6 +147,11 @@ option {
     color: black;
     border-radius: 0;
     cursor: auto;
+}
+
+.audio {
+    opacity: 0;
+    visibility: hidden;
 }
 
 @media screen and (max-width: 920px){
